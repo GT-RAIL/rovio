@@ -1,0 +1,7 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b rovio_ctrl is the ROS package responsible for controlling/querying the movement devices of the Rovio.
+The Rovio allows control of its wheels and head position. This package allows for communication from ROS to these devices.
+*/

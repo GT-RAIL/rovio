@@ -1,0 +1,20 @@
+<!--
+   Author: Russell Toris, Worcester Polytechnic Institute
+  Version: July 18, 2012
+-->
+
+<launch>
+  <!-- Edit the parameters here for your Rovio -->
+  <param name="/rovio_shared/host" type="string" value="192.168.1.131" />
+  <param name="/rovio_shared/user" type="string" value="admin" />
+  <param name="/rovio_shared/pass" type="string" value="r0b0ts" />
+  
+  <!-- Point this to your rovio_av 'wav' directory -->
+  <param name="/rovio_shared/rovio_wav" type="string" value="$(find rovio_av)/wav" />
+
+  <!-- Create an instance of each appropriate node -->
+  <include file="$(find rovio_ctrl)/launch/rovio_ctrl.launch" />
+  <include file="$(find rovio_av)/launch/rovio_av.launch" />
+  <node name="rovio_teleop" pkg="rovio_ctrl" type="rovio_teleop" respawn="false" output="screen" />
+  <node name="joy_node" pkg="joy" type="joy_node" respawn="false" output="screen" />
+</launch>

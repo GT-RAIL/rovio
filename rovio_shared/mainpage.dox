@@ -1,0 +1,7 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b rovio_shared contains standard messages as well as a library that can be used to communicate with a WowWee Rovio.
+While the rovio_http library was constructed primarily for use within the rovio stack's packages, it is possible to utilize its functionality in any ROS node.
+*/

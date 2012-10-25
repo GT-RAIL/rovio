@@ -1,0 +1,15 @@
+<package>
+  <description brief="Standard messages and services used to communicate with a WowWee Rovio">The rovio_shared package contains standard messages and services as well as a library that can be used to communicate with a WowWee Rovio.</description>
+  <author>Russell Toris</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes="" />
+  <url>http://ros.org/wiki/rovio_shared</url>
+
+  <depend package="roscpp" />
+  <depend package="std_msgs" />
+  <rosdep name="curl" />
+
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -Wl,-rpath,${prefix}/lib -lrovio_shared" />
+  </export> 
+</package>

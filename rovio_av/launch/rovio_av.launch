@@ -1,0 +1,18 @@
+<!--
+   Author: Russell Toris, Worcester Polytechnic Institute
+  Version: July 18, 2012
+-->
+
+<launch>
+  <!-- Edit the parameters here for your Rovio -->
+  <param name="/rovio_shared/host" type="string" value="192.168.1.131" />
+  <param name="/rovio_shared/user" type="string" value="admin" />
+  <param name="/rovio_shared/pass" type="string" value="r0b0ts" />
+
+  <!-- Edit the stream parameters here for your Rovio -->
+  <env name="GSCAM_CONFIG" value="souphttpsrc user-id=admin user-pw=r0b0ts location=http://192.168.1.131/GetData.cgi\?Status=false do-timestamp=true ! queue ! multipartdemux ! capsfilter caps = 'image/jpeg' ! jpegdec ! ffmpegcolorspace" />
+
+  <!-- Create an instance of each appropriate node -->
+    <node name="rovio_audio" pkg="rovio_av" type="rovio_audio" respawn="false" output="screen" />
+  <node name="gscam" pkg="gscam" type="gscam" respawn="false" output="screen" />
+</launch>

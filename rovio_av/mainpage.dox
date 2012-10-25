@@ -1,0 +1,8 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b rovio_av is the ROS package responsible for controlling/querying the audio/video devices on the Rovio.
+The Rovio is equipped with a streaming camera on its head, a microphone, and a speaker capable of playing 8000 Hz 16 bit PCM .wav files.
+This package allows for communication from ROS to the A/V devices. 
+*/
