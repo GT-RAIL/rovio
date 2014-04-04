@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>rosbridge_suite</name>
+  <name>rovio</name>
   <version>0.2.0</version>
   <description>Metapackage for the WowWee Rovio ROS Packages</description>
 

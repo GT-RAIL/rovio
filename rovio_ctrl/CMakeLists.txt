@@ -4,7 +4,7 @@ project(rovio_ctrl)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS std_msgs roscpp geometry_msgs sensor_msgs)
+find_package(catkin REQUIRED COMPONENTS std_msgs roscpp geometry_msgs rovio_shared sensor_msgs)
 
 ###################################################
 ## Declare things to be passed to other projects ##
@@ -27,7 +27,7 @@ include_directories(
 
 ## Declare a cpp executable
 add_executable(rovio_move src/rovio_move.cpp)
-add_executable(rovio_head src/rovio_audio.cpp)
+add_executable(rovio_head src/rovio_head.cpp)
 add_executable(rovio_teleop src/rovio_teleop.cpp)
 
 ## Specify libraries to link a library or executable target against
@@ -46,7 +46,7 @@ target_link_libraries(rovio_teleop
 #############
 
 ## Mark executables and/or libraries for installation
-install(TARGETS rovio_audio
+install(TARGETS rovio_move rovio_head rovio_teleop
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

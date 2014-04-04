@@ -7,19 +7,9 @@ project(rovio_shared)
 find_package(catkin REQUIRED COMPONENTS std_msgs roscpp message_generation)
 find_package(CURL REQUIRED)
 
-###################################################
-## Declare things to be passed to other projects ##
-###################################################
-
-## LIBRARIES: libraries you create in this project that dependent projects also need
-## CATKIN_DEPENDS: catkin_packages dependent projects also need
-## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES ${PROJECT_NAME}
-  DEPENDS CURL
-  CATKIN_DEPENDS message_runtime
-)
+#######################################
+## Declare ROS messages and services ##
+#######################################
 
 # Declare the message files to be built
 add_message_files(FILES
@@ -35,6 +25,20 @@ add_service_files(FILES
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
   DEPENDENCIES
+)
+
+###################################################
+## Declare things to be passed to other projects ##
+###################################################
+
+## LIBRARIES: libraries you create in this project that dependent projects also need
+## CATKIN_DEPENDS: catkin_packages dependent projects also need
+## DEPENDS: system dependencies of this project that dependent projects also need
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES ${PROJECT_NAME}
+  DEPENDS CURL
+  CATKIN_DEPENDS message_runtime
 )
 
 ###########
