@@ -4,9 +4,9 @@
 -->
 
 <launch>
-  <arg name="host" value="192.168.1.111" />
-  <arg name="user" value="admin" />
-  <arg name="pass" value="r0b0ts" />
+  <arg name="host" default="192.168.1.111" />
+  <arg name="user" default="admin" />
+  <arg name="pass" default="r0b0ts" />
 
   <!-- Edit the parameters here for your Rovio -->
   <param name="/rovio_shared/host" type="string" value="$(arg host)" />
