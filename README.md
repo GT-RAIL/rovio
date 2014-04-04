@@ -1,7 +1,7 @@
 rovio [![Build Status](https://api.travis-ci.org/WPI-RAIL/rovio.png)](https://travis-ci.org/WPI-RAIL/rovio)
 =====
 
-#### A Simple Node to Publish the Robot's Position Relative to the Map using TFs
+#### Control and Query a WowWee Rovio
 For full documentation, see [the ROS wiki](http://ros.org/wiki/rovio).
 
 [Doxygen](http://docs.ros.org/indigo/api/rovio/html/) files can be found on the ROS wiki.
