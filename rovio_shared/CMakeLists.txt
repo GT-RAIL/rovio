@@ -1,26 +1,78 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+cmake_minimum_required(VERSION 2.8.3)
+project(rovio_shared)
 
-# Set the build type.  Options are:
-#  Coverage       : w/ debug symbols, w/o optimization, w/ code-coverage
-#  Debug          : w/ debug symbols, w/o optimization
-#  Release        : w/o debug symbols, w/ optimization
-#  RelWithDebInfo : w/ debug symbols, w/ optimization
-#  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
-set(ROS_BUILD_TYPE Release)
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
+find_package(catkin REQUIRED COMPONENTS std_msgs roscpp message_generation)
+find_package(CURL REQUIRED)
 
-rosbuild_init()
+#######################################
+## Declare ROS messages and services ##
+#######################################
 
-#set the default path for built libraries to the "lib" directory
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+# Declare the message files to be built
+add_message_files(FILES
+  man_drv.msg
+)
 
-#generate messages
-rosbuild_genmsg()
-#generate services
-rosbuild_gensrv()
+## Generate services in the 'srv' folder
+add_service_files(FILES
+  head_ctrl.srv
+  wav_play.srv
+)
 
-#find the CURL libraries
-include(FindCURL)
+## Generate added messages and services with any dependencies listed here
+generate_messages(
+  DEPENDENCIES
+)
 
-rosbuild_add_library(${PROJECT_NAME} src/rovio_http.cpp)
-target_link_libraries(${PROJECT_NAME} ${CURL_LIBRARIES})
+###################################################
+## Declare things to be passed to other projects ##
+###################################################
+
+## LIBRARIES: libraries you create in this project that dependent projects also need
+## CATKIN_DEPENDS: catkin_packages dependent projects also need
+## DEPENDS: system dependencies of this project that dependent projects also need
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES ${PROJECT_NAME}
+  DEPENDS CURL
+  CATKIN_DEPENDS message_runtime
+)
+
+###########
+## Build ##
+###########
+
+
+## Specify additional locations of header files
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+)
+
+## Declare a library
+add_library(${PROJECT_NAME} src/rovio_http.cpp)
+
+## Specify libraries to link a library or executable target against
+target_link_libraries(${PROJECT_NAME}
+  ${catkin_LIBRARIES}
+  ${CURL_LIBRARIES}
+)
+
+#############
+## Install ##
+#############
+
+## Mark executables and/or libraries for installation
+install(TARGETS ${PROJECT_NAME}
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+)
+
+## Copy header files
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.hpp" PATTERN "*.h"
+)

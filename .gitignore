@@ -1,11 +1,3 @@
 .cproject
 .project
-.pydevproject
 .settings
-.svn
-bin
-build
-lib
-srv_gen
-msg_gen
-rovio_shared/src/rovio_shared

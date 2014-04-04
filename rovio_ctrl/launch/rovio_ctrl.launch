@@ -1,15 +1,19 @@
 <!--
    Author: Russell Toris, Worcester Polytechnic Institute
-  Version: July 18, 2012
+  Version: April 6, 2014
 -->
 
 <launch>
+  <arg name="host" default="192.168.1.111" />
+  <arg name="user" default="admin" />
+  <arg name="pass" default="r0b0ts" />
+
   <!-- Edit the parameters here for your Rovio -->
-  <param name="/rovio_shared/host" type="string" value="192.168.1.131" />
-  <param name="/rovio_shared/user" type="string" value="admin" />
-  <param name="/rovio_shared/pass" type="string" value="r0b0ts" />
+  <param name="/rovio_shared/host" type="string" value="$(arg host)" />
+  <param name="/rovio_shared/user" type="string" value="$(arg user)" />
+  <param name="/rovio_shared/pass" type="string" value="$(arg pass)" />
 
   <!-- Create an instance of each appropriate node -->
-    <node name="rovio_move" pkg="rovio_ctrl" type="rovio_move" respawn="false" output="screen" />
+  <node name="rovio_move" pkg="rovio_ctrl" type="rovio_move" respawn="false" output="screen" />
   <node name="rovio_head" pkg="rovio_ctrl" type="rovio_head" respawn="false" output="screen" />
 </launch>

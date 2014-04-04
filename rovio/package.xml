@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <name>rovio</name>
+  <version>0.2.1</version>
+  <description>Metapackage for the WowWee Rovio ROS Packages</description>
+
+  <maintainer email="rctoris@wpi.edu">Russell Toris</maintainer>
+  <author email="rctoris@wpi.edu">Russell Toris</author>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/rovio</url>
+  <url type="bugtracker">https://github.com/WPI-RAIL/rovio/issues</url>
+  <url type="repository">https://github.com/WPI-RAIL/rovio</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rovio_av</run_depend>
+  <run_depend>rovio_ctrl</run_depend>
+  <run_depend>rovio_shared</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

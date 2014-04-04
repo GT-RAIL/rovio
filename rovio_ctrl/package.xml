@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+  <name>rovio_ctrl</name>
+  <version>0.2.1</version>
+  <description>Control and Query the Movement Devices on a WowWee Rovio</description>
+
+  <maintainer email="rctoris@wpi.edu">Russell Toris</maintainer>
+  <author email="rctoris@wpi.edu">Russell Toris</author>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/rovio_ctrl</url>
+  <url type="bugtracker">https://github.com/WPI-RAIL/rovio/issues</url>
+  <url type="repository">https://github.com/WPI-RAIL/rovio</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>std_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rovio_shared</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+
+  <run_depend>std_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rovio_shared</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>joy</run_depend>
+  <run_depend>rovio_av</run_depend>
+</package>
