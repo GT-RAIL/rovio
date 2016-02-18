@@ -1,4 +1,4 @@
-rovio [![Build Status](https://api.travis-ci.org/WPI-RAIL/rovio.png)](https://travis-ci.org/WPI-RAIL/rovio)
+rovio [![Build Status](https://api.travis-ci.org/GT-RAIL/rovio.png)](https://travis-ci.org/GT-RAIL/rovio)
 =====
 
 #### Control and Query a WowWee Rovio

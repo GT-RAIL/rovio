@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>rovio_shared</name>
-  <version>0.2.1</version>
+  <version>0.2.2</version>
   <description>Standard Messages and Services for the WowWee Rovio</description>
 
   <maintainer email="rctoris@wpi.edu">Russell Toris</maintainer>
@@ -10,8 +10,8 @@
   <license>BSD</license>
 
   <url type="website">http://ros.org/wiki/rovio_shared</url>
-  <url type="bugtracker">https://github.com/WPI-RAIL/rovio/issues</url>
-  <url type="repository">https://github.com/WPI-RAIL/rovio</url>
+  <url type="bugtracker">https://github.com/GT-RAIL/rovio/issues</url>
+  <url type="repository">https://github.com/GT-RAIL/rovio</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
